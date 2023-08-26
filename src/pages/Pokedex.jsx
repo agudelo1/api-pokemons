@@ -5,13 +5,30 @@ import PokemonList from "../components/pokedex/PokemonList";
 
 const Pokedex = () => {
   const [pokemons, setPokemons] = useState([]);
+
+  const [pokemonName, setPokemonName] = useState("");
+  const [pokemonType, setPokemonType] = useState("");
+
   const { name } = useSelector((store) => store.trainer);
+
+  const handleChange = (setState) => (e) => {
+    setState(e.target.value);
+  };
+
+  const pokemonsByName = pokemons.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(pokemonName.toLowerCase())
+  );
 
   useEffect(() => {
     getAllPokemons()
       .then((data) => setPokemons(data))
       .catch((err) => console.log(err));
   }, []);
+
+  useEffect(() => {
+    if (pokemonType) {
+    }
+  }, [pokemonType]);
 
   return (
     <main>
@@ -21,15 +38,20 @@ const Pokedex = () => {
         </p>
         <form>
           <div>
-            <input type="text" placeholder="Search pokemon ..." />
-            <button>Search</button>
+            <input
+              value={pokemonName}
+              onChange={handleChange(setPokemonName)}
+              type="text"
+              placeholder="Search pokemon ..."
+            />
           </div>
-          <select>
+          <select value={pokemonType} onChange={handleChange(setPokemonType)}>
             <option value="">All pokemons</option>
+            <option value="rock">Rock</option>
           </select>
         </form>
       </section>
-      <PokemonList pokemons={pokemons} />
+      <PokemonList pokemons={pokemonsByName} />
     </main>
   );
 };
