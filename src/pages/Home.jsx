@@ -28,9 +28,9 @@ const Home = () => {
             <p className="text-center">To start give your name</p>
           </div>
 
-          <form className="  flex  justify-center " onSubmit={handleSubmit}>
+          <form className=" flex  justify-center " onSubmit={handleSubmit}>
             <input
-              className="shadow-md p-2 focus:outline-none"
+              className="shadow-md p-2 focus:outline-none "
               autoComplete="off"
               id="nameTrainer"
               type="text"
