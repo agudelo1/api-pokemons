@@ -8,6 +8,9 @@ const usePokedex = () => {
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonType, setPokemonType] = useState("");
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+
   const { name } = useSelector((store) => store.trainer);
 
   const handleChange = (setState) => (e) => {
@@ -20,15 +23,27 @@ const usePokedex = () => {
 
   useEffect(() => {
     if (!pokemonType) {
+      setIsLoading(true);
       getAllPokemons()
-        .then((data) => setPokemons(data))
-        .catch((err) => console.log(err));
+        .then((data) => {
+          setPokemons(data);
+          setIsLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setIsError(true);
+          setIsLoading(false);
+        });
     }
   }, [pokemonType]);
 
   useEffect(() => {
     if (pokemonType) {
-      getPokemonsByType(pokemonType).then((data) => setPokemons(data));
+      setIsLoading(true);
+      getPokemonsByType(pokemonType).then((data) => {
+        setPokemons(data);
+        setIsLoading(false);
+      });
     }
   }, [pokemonType]);
   return {
@@ -39,6 +54,8 @@ const usePokedex = () => {
     handleChange,
     setPokemonName,
     pokemonsByName,
+    isLoading,
+    isError,
   };
 };
 export default usePokedex;

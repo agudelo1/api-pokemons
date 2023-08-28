@@ -77,7 +77,7 @@ const PokemonDetail = () => {
         <h3>Movements </h3>
         <section className="flex flex-wrap gap-2 p-4">
           {pokemonData?.moves.map((move) => (
-            <Movents key={move.url} moves={move} />
+            <Movents key={move} moves={move} />
           ))}
         </section>
       </article>

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const getAllPokemons = async () => {
-  const URL_BASE = "https://pokeapi.co/api/v2/pokemon?limit=20";
+  const URL_BASE = "https://pokeapi.co/api/v2/pokemon?limit=1280";
   const { data } = await axios.get(URL_BASE);
   return data.results;
 };
