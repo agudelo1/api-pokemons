@@ -22,15 +22,20 @@ const Home = () => {
             <img src="/img/banner.png" alt="" />
           </div>
           <div>
-            <h2 className="text-center text-red-500 font-bold">
+            <h2 className="text-center text-[#FE1936] font-fira-Code font-bold text-[30px] ">
               Hello trainer!
             </h2>
-            <p className="text-center">To start give your name</p>
+            <p className="text-center font-fira-Code text-[15px]">
+              To start give your name
+            </p>
           </div>
 
-          <form className=" flex  justify-center " onSubmit={handleSubmit}>
+          <form
+            className=" flex  justify-center font-fira-Code text-[10px] "
+            onSubmit={handleSubmit}
+          >
             <input
-              className="shadow-md p-2 focus:outline-none "
+              className="shadow-md p-2 focus:outline-none  "
               autoComplete="off"
               id="nameTrainer"
               type="text"

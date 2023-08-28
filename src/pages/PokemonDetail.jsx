@@ -20,7 +20,7 @@ const PokemonDetail = () => {
   }, []);
 
   return (
-    <main className="grid place-items-center gap-8 pb-8">
+    <main className="grid place-items-center gap-8 pb-8 font-fira-Code">
       <header className=" h-20 w-full "></header>
       <article className="w-[min(90%,_800px)] shadow-xl pb-4">
         <div

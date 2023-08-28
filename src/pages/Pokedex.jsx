@@ -14,13 +14,15 @@ const Pokedex = () => {
 
   return (
     <main className="">
-      <section className="grid gap-2 p-2 ">
-        <p className=" text-red-500 font-bold text-center">
+      <section className="grid gap-2 p-2 font-inter ">
+        <p className=" text-red-500 font-fira-Code font-bold text-center">
           Welcome
           <span className="uppercase"> {name} </span>
         </p>
-        <p className="text-center">Here you can find your favorite pokemon</p>
-        <form className="grid gap-4 justify-center p-4 sm:flex sm:gap-4 ]">
+        <p className="text-center font-fira-Code text-[15px]">
+          Here you can find your favorite pokemon
+        </p>
+        <form className="grid gap-4 justify-center p-4 sm:flex sm:gap-4 font-fira-Code">
           <div>
             <input
               className="shadow-md p-2 focus:outline-none sm:w-[300px]"
@@ -31,7 +33,7 @@ const Pokedex = () => {
             />
           </div>
           <select
-            className="shadow-sm p-2 focus:outline-none rounded-md sm:w-[200px] "
+            className="shadow-sm p-2 focus:outline-none rounded-md sm:w-[200px] font-fira-Code"
             value={pokemonType}
             onChange={handleChange(setPokemonType)}
           >
