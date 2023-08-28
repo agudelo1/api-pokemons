@@ -31,18 +31,18 @@ const Home = () => {
           </div>
 
           <form
-            className=" flex  justify-center font-fira-Code text-[10px] "
+            className=" flex  justify-center  font-fira-Code text-[12px] "
             onSubmit={handleSubmit}
           >
             <input
-              className="shadow-md p-2 focus:outline-none  "
+              className="shadow-md p-2 focus:outline-none "
               autoComplete="off"
               id="nameTrainer"
               type="text"
               required
               placeholder="Your name..."
             />
-            <button className="bg-red-500 p-2 px-8  text-white">Start!</button>
+            <button className="bg-red-500 p-2 px-6  text-white">Start!</button>
           </form>
         </article>
       </section>
