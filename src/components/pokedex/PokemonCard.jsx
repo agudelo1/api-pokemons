@@ -26,7 +26,7 @@ const PokemonCard = ({ pokemonUrl }) => {
       <header
         className={`h-[80px] relative mb-8 ${
           bgStylePokemonType[pokemonInfo?.types[0]]
-        }`}
+        }  `}
       >
         <div className="absolute left-1/2 -translate-x-1/2 -bottom-5 h-[60px] aspect-square">
           <img

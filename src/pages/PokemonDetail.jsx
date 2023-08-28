@@ -64,7 +64,7 @@ const PokemonDetail = () => {
             </article>
             <article className="p-2 grid gap-2 justify-center">
               <h3>Habilities</h3>
-              <span className=" w-[130px]  capitalize border-[5px] border-gray-400 p-1 px-4">
+              <span className=" w-[130px]  capitalize border-[5px] border-gray-400 p-1 px-4 line-clamp-1">
                 {pokemonData?.abilities[0]}
               </span>
             </article>

@@ -13,16 +13,16 @@ const Pokedex = () => {
   } = usePokedex();
 
   return (
-    <main className="">
-      <section className="grid gap-2 p-2 font-inter ">
-        <p className=" text-red-500 font-fira-Code font-bold text-center">
-          Welcome
+    <main>
+      <section className="grid gap-2 p-2 px-4 font-inter max-w-[1024px] mx-auto ">
+        <p className=" text-red-500 font-fira-Code font-bold text-center grid">
+          <span className="text-[25px]">Welcome</span>
           <span className="uppercase"> {name} </span>
         </p>
         <p className="text-center font-fira-Code text-[15px]">
           Here you can find your favorite pokemon
         </p>
-        <form className="grid gap-4 justify-center p-4 sm:flex sm:gap-4 font-fira-Code">
+        <form className="grid gap-4 justify-center sm:justify-between p-4 sm:flex sm:gap-4 font-fira-Code ">
           <div>
             <input
               className="shadow-md p-2 focus:outline-none sm:w-[300px]"

@@ -31,11 +31,11 @@ const Home = () => {
           </div>
 
           <form
-            className=" flex  justify-center  font-fira-Code text-[12px] "
+            className=" flex  justify-center  font-fira-Code text-[12px] sm:text-[25px] "
             onSubmit={handleSubmit}
           >
             <input
-              className="shadow-md p-2 focus:outline-none "
+              className="shadow-md p-2 focus:outline-none  "
               autoComplete="off"
               id="nameTrainer"
               type="text"
