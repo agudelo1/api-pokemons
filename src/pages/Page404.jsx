@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 const Page404 = () => {
   return (
     <section className="w-[100%] h-[100vh] flex justify-center items-center flex-col ">
-      <p className="absolute top-[20px] text-[112px] text-[#030E0063]">404</p>
-      <div className="h-[300px] aspect-square">
+      <p className="absolute top-[5px] text-[112px] text-[#030E0063]">404</p>
+      <div className="h-[280px] aspect-square">
         <img
           className="h-full w-full object-contain"
           src="/img/not-found.gif"
           alt=""
         />
       </div>
-      <h2 className="absolute bottom-[128px] text-[30px] ">
+      <h2 className="absolute bottom-[100px] text-[30px] ">
         Look like you're lost
       </h2>
-      <h5 className="absolute bottom-[96px] text-[#9C9C9C]">
+      <h5 className="absolute bottom-[80px] text-[#9C9C9C]">
         the page you are looking for not available
       </h5>
       <Link
