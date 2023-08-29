@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { getAllPokemons, getPokemonsByType } from "../services/pokemons";
+import {
+  getAllPokemons,
+  getAllTypes,
+  getPokemonsByType,
+} from "../services/pokemons";
 
 const usePokedex = () => {
   const [pokemons, setPokemons] = useState([]);
 
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonType, setPokemonType] = useState("");
+  const [types, setTypes] = useState([]);
 
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -47,6 +52,13 @@ const usePokedex = () => {
       });
     }
   }, [pokemonType]);
+
+  useEffect(() => {
+    getAllTypes()
+      .then((types) => setTypes(types))
+      .catch((err) => console.log(err));
+  }, []);
+
   return {
     name,
     pokemonName,
@@ -57,6 +69,7 @@ const usePokedex = () => {
     pokemonsByName,
     isLoading,
     isError,
+    types,
   };
 };
 export default usePokedex;

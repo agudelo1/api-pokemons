@@ -28,13 +28,23 @@ const PokemonCard = ({ pokemonUrl }) => {
           bgStylePokemonType[pokemonInfo?.types[0]]
         }  `}
       >
-        <div className="absolute left-1/2 -translate-x-1/2 -bottom-5 h-[60px] aspect-square">
-          <img
-            className="h-full w-full object-contain"
-            src={pokemonInfo?.image}
-            alt=""
-          />
-        </div>
+        {pokemonInfo?.image ? (
+          <div className="absolute left-1/2 -translate-x-1/2 -bottom-5 h-[70px] aspect-square">
+            <img
+              className="h-full w-full object-contain"
+              src={pokemonInfo?.image}
+              alt=""
+            />
+          </div>
+        ) : (
+          <div className="absolute left-1/2 -translate-x-1/2 -bottom-10 h-[100px] aspect-square">
+            <img
+              className="h-full w-full object-contain"
+              src={pokemonInfo?.imageRespaldo}
+              alt=""
+            />
+          </div>
+        )}
       </header>
       <section>
         <h3 className="text-lg font-bold">{pokemonInfo?.name}</h3>

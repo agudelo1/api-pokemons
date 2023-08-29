@@ -1,9 +1,13 @@
+import { useState } from "react";
 import ErrorMessage from "../components/Error/ErrorMessage";
 import Loader from "../components/loader/Loader";
 import PokemonList from "../components/pokedex/PokemonList";
 import usePokedex from "../hooks/usePokedex";
+import { paginateData } from "../utils/pagination";
+import Paginations from "../components/pokedex/Paginations";
 
 const Pokedex = () => {
+  const [currentPage, setCurrentPage] = useState(1);
   const {
     name,
     pokemonName,
@@ -14,7 +18,13 @@ const Pokedex = () => {
     pokemonsByName,
     isError,
     isLoading,
+    types,
   } = usePokedex();
+
+  const { itemsInCurrentPage, lastPage, pagesInCurrentBlock } = paginateData(
+    pokemonsByName,
+    currentPage
+  );
 
   return (
     <main>
@@ -46,29 +56,25 @@ const Pokedex = () => {
                 onChange={handleChange(setPokemonType)}
               >
                 <option value="">All pokemons</option>
-                <option value="grass">Grass</option>
-                <option value="rock">Rock</option>
-                <option value="fire">Fire</option>
-                <option value="normal">Normal</option>
-                <option value="fighting">Fighting</option>
-                <option value="flying">Flying</option>
-                <option value="poison">Poison</option>
-                <option value="ground">Ground</option>
-                <option value="bug">Bug</option>
-                <option value="ghost">Ghost</option>
-                <option value="steel">Steel</option>
-                <option value="water">Water</option>
-                <option value="electric">Electric</option>
-                <option value="psychic">Psychic</option>
-                <option value="ice">Ice</option>
-                <option value="dragon">Dragon</option>
-                <option value="fairy">Fairy</option>
-                <option value="unknown">Unknown</option>
-                <option value="shadow">Shadow</option>
+                {types.map((type) => (
+                  <option
+                    className="capitalize"
+                    key={type.url}
+                    value={type.name}
+                  >
+                    {type.name}
+                  </option>
+                ))}
               </select>
             </form>
           </section>
-          <PokemonList pokemons={pokemonsByName} />
+          <Paginations
+            lastPage={lastPage}
+            pagesInCurrentBlock={pagesInCurrentBlock}
+            setCurrentPage={setCurrentPage}
+            currentPage={currentPage}
+          />
+          <PokemonList pokemons={itemsInCurrentPage} />
         </>
       )}
     </main>

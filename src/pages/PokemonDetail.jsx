@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getPokemonById } from "../services/pokemons";
 import StatBarList from "../components/pokemonDetail/StatBarList";
 import {
@@ -20,8 +20,15 @@ const PokemonDetail = () => {
   }, []);
 
   return (
-    <main className="grid place-items-center gap-8 pb-8 font-fira-Code">
-      <header className=" h-20 w-full "></header>
+    <main className="grid place-items-center gap-8 pb-8 font-fira-Code py-4">
+      <Link
+        to={-1}
+        className="bg-black/25 p-1 rounded-md fixed top-[130px] z-10 left-[15px] "
+      >
+        <i className="text-[40px] bx bx-arrow-back bx-tada text-white font-semibold"></i>
+      </Link>
+      <header className=" h-16 w-full "></header>
+
       <article className="w-[min(90%,_800px)] shadow-xl pb-4">
         <div
           className={`h-[90px]  relative mb-8 ${
