@@ -27,11 +27,12 @@ const usePokedex = () => {
       getAllPokemons()
         .then((data) => {
           setPokemons(data);
-          setIsLoading(false);
         })
         .catch((err) => {
           console.log(err);
           setIsError(true);
+        })
+        .finally(() => {
           setIsLoading(false);
         });
     }
