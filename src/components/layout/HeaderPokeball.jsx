@@ -26,9 +26,10 @@ const HeaderPokeball = ({ children }) => {
               {!isError && (
                 <button
                   onClick={handleLogout}
-                  className="shadow-xl rounded-md bg-black/40 absolute right-1  -bottom-20  sm:-bottom-24 p-2 text-white font-fira-Code font-bold"
+                  className="shadow-xl rounded-md bg-black/40 absolute right-1  -bottom-20  sm:-bottom-[100px] p-2 text-white 
+                  "
                 >
-                  <i className=" font-semibold  sm:text-[35px] bx bx-user-x "></i>
+                  <i className=" font-semibold  sm:text-[40px] bx bx-user-x "></i>
                 </button>
               )}
             </div>
