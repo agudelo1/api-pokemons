@@ -23,7 +23,7 @@ const PokemonDetail = () => {
     <main className="grid place-items-center gap-8 pb-8 font-fira-Code py-4">
       <Link
         to={-1}
-        className="bg-black/25 p-2 rounded-md fixed top-[130px] z-10 left-[15px] "
+        className="bg-black/40 p-2 rounded-md fixed top-[130px] z-10 left-[15px] "
       >
         <i className="sm:text-[40px] text-[15px] bx bx-arrow-back bx-tada text-white font-semibold"></i>
       </Link>
