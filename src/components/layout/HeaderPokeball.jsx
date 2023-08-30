@@ -14,15 +14,6 @@ const HeaderPokeball = ({ children }) => {
       <section>
         <header>
           <div className="h-16 bg-red-600 relative">
-            {!isError && (
-              <button
-                onClick={handleLogout}
-                className="absolute right-1 -top-2 p-2 text-black font-fira-Code font-bold"
-              >
-                <i className=" font-semibold  text-[35px] bx bx-user-x bx-tada"></i>
-              </button>
-            )}
-
             <div className="absolute left-0 bottom-0 sm:w-[300px] w-[200px]">
               <img src="/img/banner.png" alt="" />
             </div>
@@ -31,7 +22,16 @@ const HeaderPokeball = ({ children }) => {
             <div
               className=" h-16 bg-white aspect-square rounded-full absolute 
         right-0 -translate-x-1/2 -top-8 border-[8px] border-black after:block after:content-[''] after:h-8 after:aspect-square after:bg-slate-800 after:rounded-full after:absolute after:left-1/2 after:-translate-x-1/2 after:top-1/2 after:-translate-y-1/2 after:border-[6px] after:border-black"
-            ></div>
+            >
+              {!isError && (
+                <button
+                  onClick={handleLogout}
+                  className="shadow-xl rounded-md bg-black/40 absolute right-1  -bottom-20  sm:-bottom-24 p-2 text-white font-fira-Code font-bold"
+                >
+                  <i className=" font-semibold  sm:text-[35px] bx bx-user-x "></i>
+                </button>
+              )}
+            </div>
           </div>
         </header>
         {children}
