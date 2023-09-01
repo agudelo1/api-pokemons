@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ErrorMessage from "../components/Error/ErrorMessage";
 import Loader from "../components/loader/Loader";
 import PokemonList from "../components/pokedex/PokemonList";
@@ -25,6 +25,10 @@ const Pokedex = () => {
     pokemonsByName,
     currentPage
   );
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [pokemonType]);
 
   return (
     <main>

@@ -27,7 +27,7 @@ const Paginations = ({
     setCurrentPage(FIRST_PAGE);
   };
   return (
-    <ul className="flex justify-center py-8 items-center font-fira-Code">
+    <ul className="cursor-pointer flex justify-center py-8 items-center font-fira-Code">
       {currentPage >= 2 && (
         <li className="flex" onClick={handleFirstPage}>
           <i className="text-[30px] sm:text-[50px] bx bx-chevrons-left bx-tada "></i>
@@ -41,7 +41,7 @@ const Paginations = ({
 
       {pagesInCurrentBlock.map((page) => (
         <li
-          className={`text-[18px] sm:text-[25px] p-2 px-[.8rem] sm:px-5 rounded-sm ${
+          className={` text-[18px] sm:text-[25px] p-2 px-[.8rem] sm:px-5 rounded-sm ${
             currentPage === page ? "text-white bg-red-500" : ""
           }`}
           key={page}
